@@ -3,413 +3,621 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Evaaya — Empowering Global Businesses with Intention, Innovation & Impact</title>
+<title>Evaaya — Global Capability Center Experts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 <style>
-/* ---------- DESIGN SYSTEM (LIGHT DEFAULT) ---------- */
-:root {
-  --teal: #1a6b6b;
-  --teal-hi: #218a8a;
-  --teal-p: rgba(26,107,107,.1);
-  --teal-b: rgba(26,107,107,.25);
-  --gold: #c5973a;
-  --gold-hi: #dba94c;
-}
-[data-theme="light"] {
-  --bg: #fefefc;
-  --bg2: #f7f9fc;
-  --bg3: #f0f3f9;
-  --bgc: #ffffff;
-  --ink: #111827;
-  --ink2: #4b556c;
-  --ink3: #6b7280;
-  --bdr: rgba(0,0,0,.08);
-  --bdr2: rgba(0,0,0,.04);
-  --navbg: rgba(255,255,255,.96);
-  --sh: 0 2px 20px rgba(0,0,0,.06);
-  --sh2: 0 20px 40px rgba(0,0,0,.1);
-  --imgf: none;
-  --card-hover: rgba(26,107,107,.04);
-  --hero-overlay: linear-gradient(108deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.85) 45%, rgba(255,255,255,.6) 70%, rgba(255,255,255,.2) 100%);
-  --hero-text: #111827;
-  --hero-text-light: #4b556c;
-}
-[data-theme="dark"] {
-  --bg: #0b1017;
-  --bg2: #111822;
-  --bg3: #16202c;
-  --bgc: #1b2635;
-  --ink: #edf2f9;
-  --ink2: #b4c4dc;
-  --ink3: #7c8ea8;
-  --bdr: rgba(255,255,255,.07);
-  --bdr2: rgba(255,255,255,.03);
-  --navbg: rgba(11,16,23,.94);
-  --sh: 0 4px 24px rgba(0,0,0,.45);
-  --sh2: 0 18px 48px rgba(0,0,0,.65);
-  --imgf: brightness(.82) contrast(1.08) saturate(.88);
-  --card-hover: rgba(26,107,107,.08);
-  --hero-overlay: linear-gradient(108deg, rgba(11,16,23,.96) 0%, rgba(11,16,23,.88) 45%, rgba(11,16,23,.7) 70%, rgba(11,16,23,.3) 100%);
-  --hero-text: #ffffff;
-  --hero-text-light: rgba(255,255,255,.75);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;transition:background .3s,color .3s;overflow-x:hidden}
-::selection{background:var(--teal-p);color:var(--teal-hi)}
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--teal);border-radius:4px}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Navigation */
-#nav{
-  position:fixed;top:0;left:0;right:0;z-index:300;
-  height:70px;padding:0 24px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:var(--navbg);backdrop-filter:blur(20px);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s,box-shadow .3s;
-}
-#nav.stuck{border-bottom-color:var(--bdr);box-shadow:var(--sh)}
-.nlogo img{height:32px;width:auto;object-fit:contain}
-[data-theme="dark"] .nlogo img{filter:brightness(0) invert(1)}
-.nlogo-fb{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);display:none}
-.nlogo-fb span{color:var(--teal)}
-.nlinks{display:flex;gap:32px;list-style:none}
-.nlinks a{font-size:13px;font-weight:500;color:var(--ink3);letter-spacing:.02em;transition:color .2s;position:relative}
-.nlinks a::after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:2px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
-.nlinks a:hover{color:var(--teal)}
-.nlinks a:hover::after{transform:scaleX(1)}
-.nright{display:flex;align-items:center;gap:12px}
-.ntog{
-  width:38px;height:38px;border-radius:50%;
-  border:1px solid var(--bdr);background:var(--bgc);
-  cursor:pointer;font-size:16px;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .2s;color:var(--ink2);
-}
-.ntog:hover{border-color:var(--teal);transform:rotate(8deg);background:var(--teal-p)}
-.ncta{
-  background:var(--teal);color:#fff;padding:8px 22px;
-  border-radius:40px;font-size:13px;font-weight:600;
-  transition:all .2s;
-}
-.ncta:hover{background:var(--teal-hi);transform:translateY(-1px);box-shadow:0 6px 18px rgba(26,107,107,.3)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.burger span{width:24px;height:2px;background:var(--ink2);border-radius:2px;transition:all .25s}
-.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mdrawer{display:none;position:fixed;top:70px;left:0;right:0;z-index:299;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);padding:20px 24px 24px;flex-direction:column;gap:6px;transform:translateY(-12px);opacity:0;transition:all .25s}
-.mdrawer.open{transform:none;opacity:1}
-.mdrawer a{display:block;padding:12px 0;font-size:15px;font-weight:500;color:var(--ink2);border-bottom:1px solid var(--bdr2);transition:all .2s}
-.mdrawer a:hover{color:var(--teal);padding-left:8px}
-.mdrawer .mcta{background:var(--teal);color:#fff;text-align:center;padding:12px;border-radius:40px;margin-top:12px;border-bottom:none}
+  /* Light theme default (clean white) */
+  :root {
+    --bg-white: #ffffff;
+    --bg-offwhite: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --border-light: #e2e8f0;
+    --accent: #0f3b3b;
+    --accent-light: #1a5a5a;
+    --accent-soft: #eef4f4;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+    --card-hover: rgba(15, 59, 59, 0.04);
+  }
 
-/* HERO — FULL VISIBLE ON MOBILE */
-#hero{
-  min-height:100vh;
-  position:relative;
-  display:flex;
-  align-items:center;
-  padding-top:70px;
-}
-.hpar{
-  position:absolute;inset:0;
-  background:url('https://evaaya.com/wp-content/uploads/2025/09/evaaya-home-who-we-are.jpg') center/cover no-repeat;
-  filter:brightness(.65) saturate(.85);
-}
-[data-theme="dark"] .hpar{filter:brightness(.28) saturate(.72) contrast(1.1);}
-.hgrad{
-  position:absolute;inset:0;z-index:1;
-  background:var(--hero-overlay);
-}
-.hdots{
-  position:absolute;inset:0;z-index:2;pointer-events:none;
-  background-image:radial-gradient(circle,rgba(0,0,0,.04) 1px,transparent 1px);
-  background-size:48px 48px;
-}
-[data-theme="dark"] .hdots{background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);}
-.hinner{
-  position:relative;z-index:3;width:100%;max-width:1320px;margin:0 auto;
-  padding:40px 24px 60px;
-  display:grid;grid-template-columns:1fr 1fr;gap:48px;
-  align-items:center;
-}
-.hleft{padding-right:16px}
-.hchip{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'JetBrains Mono',monospace;font-size:10px;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--teal-hi);padding:5px 16px;
-  border:1px solid var(--bdr);border-radius:100px;
-  background:var(--bgc);backdrop-filter:blur(8px);
-  margin-bottom:20px;
-}
-.hchip::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-h1.hh{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(38px,6vw,78px);
-  font-weight:300;line-height:1.08;letter-spacing:-.01em;
-  color:var(--hero-text);margin-bottom:20px;
-}
-h1.hh em{font-style:italic;color:var(--gold-hi)}
-h1.hh strong{font-weight:600}
-.hsub{
-  font-size:15px;font-weight:400;color:var(--hero-text-light);
-  line-height:1.7;max-width:500px;margin-bottom:32px;
-}
-.hbtns{display:flex;gap:14px;flex-wrap:wrap}
-.hbtns .b1{
-  background:var(--teal);color:#fff;padding:11px 28px;
-  border-radius:40px;font-size:13px;font-weight:600;
-  transition:all .2s;
-}
-.hbtns .b1:hover{background:var(--teal-hi);transform:translateY(-2px);box-shadow:0 12px 28px rgba(26,107,107,.3)}
-.hbtns .b2{
-  border:1.5px solid var(--bdr);color:var(--hero-text);
-  padding:10px 24px;border-radius:40px;font-size:13px;font-weight:500;
-  background:rgba(255,255,255,.5);backdrop-filter:blur(6px);
-}
-[data-theme="dark"] .hbtns .b2{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.3);}
-.hbtns .b2:hover{border-color:var(--teal);background:var(--teal-p);}
+  [data-theme="dark"] {
+    --bg-white: #0f172a;
+    --bg-offwhite: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-light: #334155;
+    --accent-soft: #1e3a3a;
+    --card-hover: rgba(255, 255, 255, 0.04);
+  }
 
-/* RIGHT COLUMN CARDS — fully visible */
-.hright{
-  display:flex;flex-direction:column;
-  gap:0;
-  width:100%;
-}
-.hcard{
-  padding:16px 20px;
-  display:flex;align-items:center;gap:18px;
-  border-left:2px solid transparent;
-  border-bottom:1px solid var(--bdr);
-  background:rgba(255,255,255,.04);
-  backdrop-filter:blur(4px);
-  transition:all .2s;
-  border-radius:0;
-}
-[data-theme="light"] .hcard{background:rgba(255,255,255,.6);}
-.hcard:last-child{border-bottom:none}
-.hcard:hover{background:var(--teal-p);border-left-color:var(--teal);transform:translateX(4px)}
-.hcard-ico{
-  width:46px;height:46px;border-radius:12px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;background:rgba(255,255,255,.8);
-  border:1px solid var(--bdr);
-}
-[data-theme="dark"] .hcard-ico{background:rgba(255,255,255,.1);}
-.hcard-v{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,1.8vw,24px);font-weight:600;color:var(--hero-text);line-height:1.2}
-.hcard-lbl{font-size:11px;color:var(--hero-text-light);margin-top:2px;line-height:1.3}
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
 
-/* marquee */
-.marquee{overflow:hidden;background:var(--teal);padding:12px 0}
-.marquee-track{display:flex;gap:48px;white-space:nowrap;animation:scrollMarquee 40s linear infinite}
-.marquee-track span{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.9)}
-@keyframes scrollMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  /* Typography */
+  h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; }
+  h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem; }
+  h2 { font-size: 2.25rem; line-height: 1.3; margin-bottom: 1rem; }
+  h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  p { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); }
+  .text-large { font-size: 1.125rem; line-height: 1.6; }
+  .text-small { font-size: 0.875rem; }
+  .text-accent { color: var(--accent); }
 
-/* sections */
-section{padding:80px 0}
-.W{max-width:1320px;margin:0 auto;padding:0 24px}
-.lbl{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'JetBrains Mono',monospace;font-size:10px;
-  color:var(--teal-hi);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;
-}
-.lbl::before{content:'';width:28px;height:1.5px;background:currentColor}
-h2.ST{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(32px,4vw,52px);font-weight:400;line-height:1.1;
-  margin-bottom:20px;
-}
-h2.ST em{font-style:italic;color:var(--teal)}
-.fi{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.9,.3,1.1),transform .7s ease}
-.fi.v{opacity:1;transform:none}
-.fi.d1{transition-delay:.08s}.fi.d2{transition-delay:.16s}.fi.d3{transition-delay:.24s}.fi.d4{transition-delay:.32s}
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 5rem 0; }
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 0.75rem;
+  }
+  .bg-offwhite { background: var(--bg-offwhite); }
 
-/* who we are */
-#who{background:var(--bg2)}
-.wg{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.wiw{position:relative}
-.wimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:var(--sh2);filter:var(--imgf);transition:transform 8s ease}
-.wiw:hover .wimg{transform:scale(1.02)}
-.wiw::before{content:'';position:absolute;top:-12px;left:-12px;width:56px;height:56px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
-.wiw::after{content:'';position:absolute;bottom:-12px;right:-12px;width:56px;height:56px;border-bottom:2px solid var(--teal);border-right:2px solid var(--teal)}
-.wbdg{position:absolute;bottom:24px;left:-16px;z-index:2;background:var(--teal);color:#fff;padding:12px 20px;border-radius:12px;box-shadow:var(--sh2)}
-.wtxt p{font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:16px}
-.ofcs{display:flex;gap:20px;margin-top:24px;flex-wrap:wrap}
-.ofc{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink2)}
-.ofc-dot{width:8px;height:8px;background:var(--teal);border-radius:50%}
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.75rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+  }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 500;
+    padding: 0.75rem 1.75rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    border: 1px solid var(--border-light);
+    transition: all 0.2s;
+    font-size: 0.875rem;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
-/* differentiators */
-#diff{background:var(--bg3)}
-.dh{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
-.dsub{font-size:15px;color:var(--ink2);line-height:1.65}
-.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bdr2);border:1px solid var(--bdr);border-radius:16px;overflow:hidden}
-.dc{background:var(--bgc);padding:40px 28px;transition:background .3s}
-.dc:hover{background:var(--card-hover)}
-.dc-n{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:14px}
-.dc h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:12px}
-.dc p{font-size:13.5px;color:var(--ink2);line-height:1.65}
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-light);
+    z-index: 100;
+    padding: 0.75rem 2rem;
+  }
+  [data-theme="dark"] nav { background: rgba(15, 23, 42, 0.96); }
+  .nav-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; position: relative; }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-actions { display: flex; align-items: center; gap: 1rem; }
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border-light);
+    border-radius: 2rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    color: var(--text-secondary);
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+  .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary); }
 
-/* services */
-#svc{background:var(--bg2)}
-.sh{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
-.ssub{font-size:15px;color:var(--ink2);line-height:1.65}
-.sg{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--bdr2);border:1px solid var(--bdr);border-radius:16px;overflow:hidden}
-.sc{background:var(--bgc);padding:40px 32px;transition:all .25s}
-.sc:hover{background:var(--card-hover);transform:translateY(-2px)}
-.sc-n{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);margin-bottom:12px}
-.sc h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:10px}
-.sc p{font-size:13.5px;color:var(--ink2);line-height:1.65}
-.sc-arr{display:inline-block;margin-top:18px;font-size:12px;font-weight:600;color:var(--teal);opacity:0;transition:opacity .2s}
-.sc:hover .sc-arr{opacity:1}
+  /* Hero Section with Transitioning Images */
+  .hero { padding-top: 7rem; padding-bottom: 4rem; position: relative; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .hero-image-container {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: var(--accent-soft);
+    height: 100%;
+    min-height: 400px;
+  }
+  .hero-slideshow { position: relative; width: 100%; height: 100%; min-height: 400px; }
+  .hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    border-radius: 1.5rem;
+  }
+  .hero-slide.active { opacity: 1; }
+  .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+  .stat-card { border-left: 2px solid var(--accent); padding-left: 1rem; }
+  .stat-number { font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1.2; }
+  .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
-/* DELIVERY SECTION */
-#deliver{background:var(--bg)}
-.dlg{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.dliw{position:relative}
-.dlimg{width:100%;border-radius:16px;box-shadow:var(--sh2);filter:var(--imgf);transition:transform 6s ease}
-.dliw:hover .dlimg{transform:scale(1.01)}
-.dlbdg{position:absolute;bottom:-12px;right:-16px;background:var(--gold);color:#fff;padding:16px 22px;border-radius:12px}
-.dltxt p{font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:20px}
-.pls{border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:24px}
-.pl{
-  display:flex;align-items:center;gap:16px;
-  padding:16px 20px;
-  border-bottom:1px solid var(--bdr);
-  transition:all .2s;
-}
-.pl:last-child{border-bottom:none}
-.pl:hover{background:var(--card-hover);padding-left:24px}
-.pl-ico{
-  width:44px;height:44px;border-radius:50%;flex-shrink:0;
-  background:var(--teal-p);display:flex;align-items:center;justify-content:center;
-  font-size:20px;border:1px solid var(--teal-b);
-}
-.pl-text{flex:1}
-.pl-text h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:2px}
-.pl-text small{font-size:12px;color:var(--ink3);line-height:1.4;display:block}
+  /* Marquee */
+  .marquee { background: var(--accent-soft); padding: 1rem 0; overflow: hidden; white-space: nowrap; }
+  .marquee-content { display: inline-block; animation: marquee 30s linear infinite; font-size: 0.875rem; font-weight: 500; color: var(--accent); }
+  .marquee-content span { margin: 0 1.5rem; }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* global reach */
-#reach{background:var(--bg3)}
-.mw{position:relative;border-radius:20px;overflow:hidden;margin-bottom:48px;box-shadow:var(--sh2)}
-.mimg{width:100%;height:260px;object-fit:cover;display:block}
-[data-theme="dark"] .mimg{filter:brightness(.5) contrast(1.1)}
-.mov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6) 100%)}
-.pin{position:absolute;display:flex;flex-direction:column;align-items:center;gap:4px}
-.pin-dot{width:10px;height:10px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 3px rgba(197,151,58,.3);animation:pulsePin 2s infinite}
-@keyframes pulsePin{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-.pin-label{font-family:'JetBrains Mono',monospace;font-size:8px;background:rgba(0,0,0,.7);padding:3px 8px;border-radius:20px;color:#fff;white-space:nowrap}
-.og{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
-.oc{background:var(--bgc);border:1px solid var(--bdr);border-radius:20px;padding:28px 24px;transition:all .25s}
-.oc:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:var(--teal-b)}
-.oc h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;margin:8px 0 4px}
-.oc-c{font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:.1em}
-.rpg{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:28px}
-.rq{padding:24px 32px;border-left:4px solid var(--teal);background:var(--bgc);border-radius:0 16px 16px 0;font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic}
+  /* Why Evaaya Cards */
+  .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
+  .diff-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .diff-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent-soft); background: var(--card-hover); }
+  .diff-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.15;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    line-height: 1;
+    transition: opacity 0.2s;
+  }
+  .diff-card:hover .diff-number { opacity: 0.3; }
+  .diff-card h3 { font-size: 1.75rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+  .diff-card p { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; }
 
-/* contact */
-#contact{background:var(--bg2)}
-.ctg{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
-.ctrows{display:flex;flex-direction:column;gap:14px;margin-top:24px}
-.ctrow{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink2)}
-.ctrow-ico{width:38px;height:38px;border-radius:50%;background:var(--teal-p);display:flex;align-items:center;justify-content:center}
-.ctf{background:var(--bgc);border:1px solid var(--bdr);border-radius:24px;padding:36px;box-shadow:var(--sh)}
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
-.fg label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
-.fg input,.fg textarea{background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;padding:11px 14px;font-size:14px;color:var(--ink);font-family:inherit;outline:none;transition:all .2s}
-.fg input:focus,.fg textarea:focus{border-color:var(--teal);background:var(--bgc)}
-.ctsub{background:var(--teal);color:#fff;border:none;border-radius:40px;padding:13px;font-size:14px;font-weight:600;width:100%;cursor:pointer;transition:all .2s;margin-top:6px}
-.ctsub:hover{background:var(--teal-hi);transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,107,107,.3)}
+  /* Services Grid with hover effect */
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+  .service-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent-soft);
+    transition: width 0.4s ease;
+    z-index: 0;
+  }
+  .service-card:hover::before { width: 100%; }
+  .service-card > * { position: relative; z-index: 1; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent-soft); }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; transition: transform 0.2s; }
+  .service-card:hover .service-icon { transform: scale(1.05); }
+  .service-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 
-/* footer */
-footer{background:#0a0f17;padding:60px 24px 36px}
-.ft{max-width:1320px;margin:0 auto}
-.ftt{display:grid;grid-template-columns:2fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px}
-.ftlog img{height:30px;filter:brightness(0) invert(1)}
-.ftbrand p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.65;margin-top:14px}
-.ftcol h5{font-size:10px;letter-spacing:.15em;color:var(--gold);margin-bottom:18px}
-.ftcol ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.ftcol a{font-size:13px;color:rgba(255,255,255,.35);transition:color .2s}
-.ftcol a:hover{color:var(--gold)}
-.ftb{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.soc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;transition:all .2s;color:rgba(255,255,255,.4)}
-.soc:hover{border-color:var(--gold);color:var(--gold);background:rgba(197,151,58,.1)}
-.soc svg{width:14px;height:14px;fill:currentColor}
+  /* Process Steps */
+  .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 2rem; text-align: center; }
+  .step { padding: 1rem; transition: transform 0.2s; }
+  .step:hover { transform: translateY(-4px); }
+  .step-number { width: 2.5rem; height: 2.5rem; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 600; }
 
-/* MOBILE FIRST: full visibility */
-@media(max-width:1000px){
-  #nav{padding:0 20px}
-  .nlinks,.ncta{display:none}
-  .burger{display:flex}
-  .mdrawer{display:flex}
-  #hero{min-height:auto;padding-top:70px;}
-  .hinner{grid-template-columns:1fr;padding:20px 20px 50px;gap:32px}
-  .hleft{padding-right:0}
-  .hright{flex-direction:row;overflow-x:auto;gap:12px;padding-bottom:12px;margin-bottom:0;scrollbar-width:thin}
-  .hcard{min-width:190px;border-left:none;border-radius:14px;background:var(--bgc);border:1px solid var(--bdr);flex-shrink:0;padding:14px 16px;backdrop-filter:none;}
-  .hcard:hover{transform:translateX(0)}
-  .hcard-ico{width:42px;height:42px;font-size:20px}
-  .wg,.dlg,.ctg,.dh,.sh,.rh{grid-template-columns:1fr;gap:40px}
-  .dg,.sg{grid-template-columns:1fr}
-  .og,.rpg{grid-template-columns:1fr;gap:20px}
-  .ftt{grid-template-columns:1fr 1fr;gap:36px}
-  section{padding:60px 0}
-  .W{padding:0 20px}
-  .wiw::before,.wiw::after,.wbdg,.dlbdg{display:none}
-  .mimg{height:180px}
-  .pls{margin-top:16px}
-  .pl{padding:12px 16px}
-  .hchip{font-size:9px;padding:4px 12px}
-  h1.hh{font-size:36px}
-}
-@media(max-width:550px){
-  .hcard{min-width:170px}
-  .fg2{grid-template-columns:1fr}
-  .ctf{padding:24px 20px}
-  .hbtns .b1,.hbtns .b2{padding:8px 20px;font-size:12px}
-}
+  /* Impact */
+  .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .impact-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .impact-item { border-left: 2px solid var(--accent); padding-left: 1rem; transition: transform 0.2s; }
+  .impact-item:hover { transform: translateX(4px); }
+  .impact-number { font-size: 2rem; font-weight: 700; color: var(--accent); }
+
+  /* Industries */
+  .industries-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+  .industry-card { text-align: center; padding: 1.5rem; border: 1px solid var(--border-light); border-radius: 0.75rem; transition: all 0.2s; }
+  .industry-card:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-3px); }
+  .industry-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+  /* Testimonials */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+  .testimonial-card { background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 1rem; padding: 1.5rem; transition: all 0.2s; }
+  .testimonial-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .testimonial-text { font-style: italic; margin-bottom: 1rem; color: var(--text-secondary); }
+
+  /* Global Reach Map */
+  .reach-section {
+    background: var(--bg-offwhite);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  .map-container {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(145deg, var(--accent-soft) 0%, var(--bg-white) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .map-container:hover .map-image { transform: scale(1.02); }
+  .map-pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  .map-pin:hover { transform: translate(-50%, -50%) scale(1.25); z-index: 20; }
+  .pin-dot {
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px rgba(15, 59, 59, 0.3);
+    transition: all 0.2s;
+  }
+  .map-pin:hover .pin-dot { box-shadow: 0 0 0 6px rgba(15, 59, 59, 0.4); background: var(--accent-light); }
+  .pin-label {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 0.25rem 0.85rem;
+    border-radius: 2rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    box-shadow: var(--shadow-sm);
+  }
+  .map-pin:hover .pin-label { opacity: 1; }
+
+  /* Enhanced Office Cards - More Appealing */
+  .map-offices {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-top: 1px solid var(--border-light);
+    background: var(--bg-white);
+    flex-wrap: wrap;
+  }
+  .office-card {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 1.25rem;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    min-width: 180px;
+    box-shadow: var(--shadow-sm);
+  }
+  .office-card:hover {
+    background: var(--accent-soft);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+  }
+  .office-flag {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    display: inline-block;
+  }
+  .office-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+  }
+  .office-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .office-location {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.2rem 0.8rem;
+    border-radius: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--accent);
+    color: white;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .cta-section h2 { color: white; }
+  .cta-section p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
+  .btn-cta { background: white; color: var(--accent); padding: 0.75rem 2rem; border-radius: 2rem; text-decoration: none; font-weight: 600; transition: all 0.2s; display: inline-block; }
+  .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+  /* Footer */
+  footer { background: var(--bg-offwhite); border-top: 1px solid var(--border-light); padding: 3rem 0; margin-top: 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.5rem; }
+  .footer-links a { text-decoration: none; color: var(--text-muted); font-size: 0.875rem; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+  .social-link { color: var(--text-muted); transition: color 0.2s; text-decoration: none; }
+  .social-link:hover { color: var(--accent); }
+
+  /* Mobile Drawer */
+  .mobile-drawer { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-white); border-bottom: 1px solid var(--border-light); padding: 1rem; flex-direction: column; gap: 1rem; z-index: 99; }
+  .mobile-drawer a { text-decoration: none; color: var(--text-primary); padding: 0.5rem 0; }
+  .mobile-drawer.open { display: flex; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 0 1.5rem; }
+    section { padding: 3rem 0; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.75rem; }
+    .nav-links, .nav-actions { display: none; }
+    .mobile-menu-btn { display: block; }
+    .hero-grid, .impact-grid, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .services-grid, .diff-grid, .process-steps, .industries-grid, .testimonials-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .process-steps { grid-template-columns: 1fr; }
+    .diff-card h3 { font-size: 1.5rem; }
+    .map-offices { flex-direction: column; gap: 1rem; align-items: center; }
+    .map-container { min-height: 200px; }
+    .pin-dot { width: 12px; height: 12px; }
+    .hero-image-container { min-height: 250px; }
+    .hero-slideshow { min-height: 250px; }
+    .office-card { min-width: 160px; padding: 1rem 1.5rem; }
+  }
 </style>
 </head>
 <body>
-<nav id="nav"><a href="#" class="nlogo"><img src="https://evaaya.com/wp-content/uploads/2025/09/logo.png" alt="Evaaya" onerror="this.style.display='none';document.querySelector('.nlogo-fb').style.display='block'"><span class="nlogo-fb">Eva<span>aya</span></span></a><ul class="nlinks"><li><a href="#who">Who We Are</a></li><li><a href="#diff">Why Evaaya</a></li><li><a href="#svc">Services</a></li><li><a href="#deliver">Delivery</a></li><li><a href="#reach">Global Reach</a></li></ul><div class="nright"><button class="ntog" id="tog" aria-label="Toggle theme">🌙</button><a href="#contact" class="ncta">Work With Us</a><button class="burger" id="burger"><span></span><span></span><span></span></button></div></nav>
-<div class="mdrawer" id="mdrawer"><a href="#who">Who We Are</a><a href="#diff">Why Evaaya</a><a href="#svc">Services</a><a href="#deliver">Delivery</a><a href="#reach">Global Reach</a><a href="#contact" class="mcta">Work With Us</a></div>
 
-<section id="hero"><div class="hpar"></div><div class="hgrad"></div><div class="hdots"></div><div class="hinner"><div class="hleft"><div class="hchip">Premium GCC Consultancy · Built by Leaders</div><h1 class="hh">Empowering global<br>businesses with<br><em>intention, innovation,</em><br><strong>and impact.</strong></h1><p class="hsub">Transform quickly, scale efficiently and thrive with AI. Evaaya is built by leaders who have scaled billion-dollar enterprises.</p><div class="hbtns"><a href="#contact" class="b1">Work With Us</a><a href="#who" class="b2">Discover Evaaya →</a></div></div><div class="hright"><div class="hcard"><div class="hcard-ico">🏢</div><div><div class="hcard-v">Fortune 500</div><div class="hcard-lbl">GCCs for the world's most ambitious enterprises</div></div></div><div class="hcard"><div class="hcard-ico">🌏</div><div><div class="hcard-v">3 Continents</div><div class="hcard-lbl">Seattle · Toronto · Bangalore</div></div></div><div class="hcard"><div class="hcard-ico">⚡</div><div><div class="hcard-v">End-to-End</div><div class="hcard-lbl">Strategy, setup, talent, tech & operations</div></div></div><div class="hcard"><div class="hcard-ico">🤖</div><div><div class="hcard-v">AI-First</div><div class="hcard-lbl">Embedding AI at the core of every GCC</div></div></div><div class="hcard"><div class="hcard-ico">🧠</div><div><div class="hcard-v">Practitioner</div><div class="hcard-lbl">Operators who've done it — not just advisors</div></div></div></div></div></section>
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Eva<span>aya</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">Who We Are</a></li>
+      <li><a href="#services">What We Do</a></li>
+      <li><a href="#why">Why Evaaya</a></li>
+      <li><a href="#process">How We Work</a></li>
+      <li><a href="#reach">Global Reach</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+      <a href="#contact" class="btn-primary">Work With Us</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+  </div>
+</nav>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="#about">Who We Are</a>
+  <a href="#services">What We Do</a>
+  <a href="#why">Why Evaaya</a>
+  <a href="#process">How We Work</a>
+  <a href="#reach">Global Reach</a>
+  <a href="#contact" class="btn-primary" style="text-align:center">Work With Us</a>
+</div>
 
-<div class="marquee"><div class="marquee-track"><span>GCC Strategy</span><span>·</span><span>Enterprise Capability Building</span><span>·</span><span>AI & Analytics</span><span>·</span><span>Talent & Innovation Leadership</span><span>·</span><span>Digital Transformation</span><span>·</span><span>Future-Ready GCCs</span><span>·</span><span>IP Protection</span><span>·</span><span>Fortune 500 Expertise</span><span>·</span><span>Insight Before Action</span><span>·</span><span>GCC Strategy</span><span>·</span><span>Enterprise Capability Building</span><span>·</span><span>AI & Analytics</span><span>·</span><span>Talent & Innovation Leadership</span><span>·</span><span>Digital Transformation</span><span>·</span><span>Future-Ready GCCs</span><span>·</span><span>IP Protection</span><span>·</span><span>Fortune 500 Expertise</span><span>·</span><span>Insight Before Action</span><span>·</span></div></div>
+<main>
+  <!-- Hero Section with Transitioning Images -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="section-label">Global Capability Centers · Reimagined</div>
+          <h1>Build your <span class="text-accent">Global Centre</span><br>in India. Right.</h1>
+          <p class="text-large">Evaaya partners with the world's most ambitious enterprises to establish, scale, and run world-class Global Capability Centers in India — from Day One strategy to Day 1000 excellence.</p>
+          <div class="hero-stats">
+            <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">GCCs Established</div></div>
+            <div class="stat-card"><div class="stat-number">18</div><div class="stat-label">Global Markets</div></div>
+            <div class="stat-card"><div class="stat-number">12K+</div><div class="stat-label">Professionals</div></div>
+            <div class="stat-card"><div class="stat-number">94%</div><div class="stat-label">Client Retention</div></div>
+          </div>
+          <div style="margin-top: 2rem; display: flex; gap: 1rem;"><a href="#contact" class="btn-primary">Launch Your GCC</a><a href="#about" class="btn-outline">Discover Evaaya →</a></div>
+        </div>
+        <div class="hero-image-container">
+          <div class="hero-slideshow">
+            <img class="hero-slide active" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop" alt="Modern office">
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop" alt="Team collaboration">
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" alt="Global business">
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop" alt="Innovation">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="who"><div class="W"><div class="wg"><div class="wiw fi"><img class="wimg" src="https://evaaya.com/wp-content/uploads/2025/09/evaaya-home-who-we-are.jpg" alt="Evaaya team" onerror="this.src='https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800'"><div class="wbdg"><div class="wbdg-n">Fortune<br>500</div><div class="wbdg-t">Expertise</div></div></div><div class="wtxt fi d1"><div class="lbl">Who We Are</div><h2 class="ST">A premium consultancy<br>built by <em>operators.</em></h2><p>Evaaya is a premium consultancy built by leaders who have scaled billion-dollar enterprises. We understand what it takes to design, mature, and transform organizations into strategic hubs that deliver measurable value.</p><p>Our practitioner DNA sets us apart. Having built successful talent and innovation centers for Fortune 500 companies, we understand the challenges of scaling globally. This experience ensures Evaaya delivers pragmatic, battle-tested solutions that boost productivity, drive digital transformation, fuel innovation pipelines, and position organizations as powerhouses of talent.</p><div class="ofcs"><div class="ofc"><span class="ofc-dot"></span>Seattle, USA</div><div class="ofc"><span class="ofc-dot"></span>Toronto, Canada</div><div class="ofc"><span class="ofc-dot"></span>Bangalore, India</div></div></div></div></div></section>
+  <!-- Marquee -->
+  <div class="marquee"><div class="marquee-content"><span>GCC Strategy</span> <span>•</span> <span>Talent Acquisition</span> <span>•</span> <span>Entity Formation</span> <span>•</span> <span>Compliance</span> <span>•</span> <span>Real Estate</span> <span>•</span> <span>Technology Integration</span> <span>•</span> <span>Leadership Hiring</span> <span>•</span> <span>Operations Management</span> <span>•</span> <span>AI-First GCCs</span> <span>•</span> <span>GCC Strategy</span> <span>•</span> <span>Talent Acquisition</span> <span>•</span> <span>Entity Formation</span> <span>•</span> <span>Compliance</span> <span>•</span> <span>Real Estate</span> <span>•</span> <span>Technology Integration</span> <span>•</span> <span>Leadership Hiring</span> <span>•</span> <span>Operations Management</span> <span>•</span> <span>AI-First GCCs</span></div></div>
 
-<section id="diff"><div class="W"><div class="dh"><div class="fi"><div class="lbl">What Makes Us Different</div><h2 class="ST">We help companies become<br><em>hubs of innovation.</em></h2></div><p class="dsub fi d1">We help enterprises explore GCC opportunities, leverage AI, build IP, and become hubs of innovation — through three foundational practices that set us apart.</p></div><div class="dg"><div class="dc fi"><div class="dc-n">01</div><h3>Insight Before Action</h3><p>Discover your current state and future needs with clarity, strategy, and tailored options. We never prescribe solutions before deeply understanding your context.</p></div><div class="dc fi d1"><div class="dc-n">02</div><h3>End-to-End Setup</h3><p>We establish your GCC from the ground up, covering operations, people, technology, and leadership. From legal entity to the first hire to the 500th — we own the full journey.</p></div><div class="dc fi d2"><div class="dc-n">03</div><h3>Future-Ready GCCs</h3><p>Create a GCC that's innovation-driven, efficient, and positioned as an employer of choice. Centres that leverage AI, protect IP, and evolve with your business.</p></div></div></div></section>
+  <!-- About / Who We Are -->
+  <section id="about">
+    <div class="container">
+      <div class="hero-grid" style="gap: 3rem;">
+        <div><div class="section-label">Who We Are</div><h2>India's GCC specialists.<br>Not consultants. Operators.</h2><p>While others advise from the outside, Evaaya embeds alongside you — owning outcomes, not just recommendations. We've built GCCs across Bengaluru, Hyderabad, Pune, Chennai, and NCR.</p><p>Our model is built on speed, precision, and accountability. Most GCCs are operational within 90 days. All of them are built to last decades.</p><div style="display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 1.5rem;"><div><div class="stat-number" style="font-size:1.5rem;">21 days</div><div class="stat-label">Avg time to first hire</div></div><div><div class="stat-number" style="font-size:1.5rem;">Day 90</div><div class="stat-label">Fully operational</div></div></div></div>
+        <div><img src="https://evaaya.com/wp-content/uploads/2025/09/evaaya-home-who-we-are.jpg" alt="Evaaya office" style="width:100%; border-radius:1rem;" onerror="this.src='https://placehold.co/600x400/eef4f4/0f3b3b?text=Global+Capability+Center'"></div>
+      </div>
+    </div>
+  </section>
 
-<section id="svc"><div class="W"><div class="sh"><div class="fi"><div class="lbl">What We Do</div><h2 class="ST">Rethinking how global<br>teams are <em>built and scaled.</em></h2></div><p class="ssub fi d1">Evaaya helps you rethink how global teams are built and scaled — through purposeful growth, bold innovation, and leadership that delivers lasting value.</p></div><div class="sg"><div class="sc fi"><div class="sc-n">01</div><h3>Enterprise Strategy & Capability Building</h3><p>Designing and scaling future-ready operating models. We define GCC structure, governance, and strategic roadmaps that create genuine competitive advantage.</p><span class="sc-arr">Learn More →</span></div><div class="sc fi d1"><div class="sc-n">02</div><h3>AI & Analytics</h3><p>Turning data into actionable intelligence. We embed AI-first thinking into your GCC from the ground up — from data pipelines to machine learning to decision intelligence.</p><span class="sc-arr">Learn More →</span></div><div class="sc fi d2"><div class="sc-n">03</div><h3>Talent & Innovation Leadership</h3><p>Enabling organizations to become workplaces that inspire. We build talent strategies, leadership pipelines, innovation labs, and employer branding that attract India's best minds.</p><span class="sc-arr">Learn More →</span></div><div class="sc fi d3"><div class="sc-n">04</div><h3>Digital Transformation</h3><p>Embedding digital at the core of enterprise operations. We design transformation programmes that modernize legacy systems and build a culture of continuous evolution.</p><span class="sc-arr">Learn More →</span></div></div></div></section>
+  <!-- Why Evaaya -->
+  <section id="why" class="bg-offwhite">
+    <div class="container">
+      <div class="section-label">Why Evaaya</div>
+      <h2>The GCC advantage others<br>can't replicate.</h2>
+      <div class="diff-grid">
+        <div class="diff-card"><div class="diff-number">01</div><h3>Operator-Led, Not Consultant-Led</h3><p>Practitioner-grade judgment from founders who've built GCCs themselves. No slide-deck handoffs — just real execution.</p></div>
+        <div class="diff-card"><div class="diff-number">02</div><h3>Speed as a Discipline</h3><p>Operational in 90 days. Pre-built playbooks, vendor relationships, and talent pipelines that eliminate months of delay.</p></div>
+        <div class="diff-card"><div class="diff-number">03</div><h3>Skin in the Game</h3><p>Outcome-aligned pricing — not billable hours. Your GCC success is our success. This isn't a philosophy; it's how we're structured.</p></div>
+        <div class="diff-card"><div class="diff-number">04</div><h3>India-Deep, Globally Fluent</h3><p>Deep regulatory knowledge and cultural fluency for US, UK, EU, APAC stakeholders. We're the bridge that eliminates friction.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section id="deliver"><div class="W"><div class="dlg"><div class="dliw fi"><img class="dlimg" src="https://evaaya.com/wp-content/uploads/2025/09/how-we-deliver-evaaya1-768x834.webp" alt="How we deliver" onerror="this.src='https://images.unsplash.com/photo-1551434678-e076c223a692?w=700'"><div class="dlbdg"><div class="dlbdg-n">100%</div><div class="dlbdg-t">Practitioner-Led</div></div></div><div class="dltxt fi d1"><div class="lbl">How We Deliver</div><h2 class="ST">Strategy fused with<br><em>real execution.</em></h2><p>At Evaaya, we help organizations transform their talent and innovation capabilities into engines of growth, differentiation, and transformation. By combining strategy with execution, we build operations that protect and retain critical IP while leveraging AI-driven strengths.</p><div class="pls"><div class="pl"><div class="pl-ico">⚡</div><div class="pl-text"><h4>Boost Productivity</h4><small>Drive measurable output improvements from day one</small></div></div><div class="pl"><div class="pl-ico">🔄</div><div class="pl-text"><h4>Drive Digital Transformation</h4><small>Embed digital at the core of every business process</small></div></div><div class="pl"><div class="pl-ico">💡</div><div class="pl-text"><h4>Fuel Innovation Pipelines</h4><small>Build structured innovation capacity and IP development</small></div></div><div class="pl"><div class="pl-ico">🏆</div><div class="pl-text"><h4>Talent Powerhouses</h4><small>Position your GCC as an employer of choice in India</small></div></div></div></div></div></div></section>
+  <!-- Services / What We Do -->
+  <section id="services">
+    <div class="container"><div class="section-label">What We Do</div><h2>Everything your GCC needs.<br>Under one roof.</h2><div class="services-grid"><div class="service-card"><div class="service-icon">📊</div><h3>GCC Strategy & Advisory</h3><p>Define the right GCC model — Captive, BOT, Hybrid. Market feasibility, location analysis, financial modelling.</p></div><div class="service-card"><div class="service-icon">⚖️</div><h3>Entity Setup & Legal</h3><p>Private Limited, Branch Office, or Liaison Office. FEMA, RBI, MCA compliance end-to-end.</p></div><div class="service-card"><div class="service-icon">👥</div><h3>Talent Acquisition & HR</h3><p>Leadership to specialist engineers. Onboarding, payroll, benefits, and HR policy frameworks.</p></div><div class="service-card"><div class="service-icon">🏢</div><h3>Real Estate & Infrastructure</h3><p>Grade A office spaces in Bengaluru, Hyderabad, Pune, NCR. IT infrastructure and workspace design.</p></div><div class="service-card"><div class="service-icon">⚙️</div><h3>Technology & Operations</h3><p>ERP, security frameworks, cloud infra, ISMS/ISO compliance. Operational maturity from day one.</p></div><div class="service-card"><div class="service-icon">📈</div><h3>GCC Management & Scale</h3><p>Fractional COO services, culture embedding, performance management to reach world-class excellence.</p></div></div></div>
+  </section>
 
-<section id="reach"><div class="W"><div class="rh"><div class="fi"><div class="lbl">Our Global Reach</div><h2 class="ST">Local insight,<br><em>global perspective.</em></h2></div><p class="rsub fi d1">Evaaya partners with enterprises across continents. With offices in <strong>Seattle</strong>, <strong>Toronto</strong>, and <strong>Bangalore</strong>, we combine international executive experience with deep operational expertise.</p></div><div class="mw fi"><img class="mimg" src="https://evaaya.com/wp-content/uploads/2025/09/evaaya-map.webp" alt="Global map" onerror="this.style.display='none'"><div class="mov"></div><div class="pin" style="left:14%;top:36%"><div class="pin-dot"></div><div class="pin-label">Seattle</div></div><div class="pin" style="left:22%;top:30%"><div class="pin-dot"></div><div class="pin-label">Toronto</div></div><div class="pin" style="left:63%;top:52%"><div class="pin-dot"></div><div class="pin-label">Bangalore</div></div></div><div class="og"><div class="oc fi"><div class="oc-f">🇺🇸</div><h4>Seattle</h4><div class="oc-c">United States</div><p>North American headquarters. Executive leadership, enterprise sales, and Fortune 500 relationships.</p></div><div class="oc fi d1"><div class="oc-f">🇨🇦</div><h4>Toronto</h4><div class="oc-c">Canada</div><p>Canadian hub serving clients across North America with expertise in financial services and cross-border GCC structuring.</p></div><div class="oc fi d2"><div class="oc-f">🇮🇳</div><h4>Bangalore</h4><div class="oc-c">India</div><p>Operational ground zero. Deep talent networks, regulatory expertise, and hands-on GCC setup across India's premier tech hubs.</p></div></div><div class="rpg"><div class="rp fi"><h4>Scalable Solutions</h4><p>Implementing strategies that work globally, tailored locally. Every GCC is designed for its specific operating environment.</p></div><div class="rp fi d1"><h4>Diverse Expertise</h4><p>Insights drawn from multiple markets, industries, and operating models across technology, finance, healthcare, and manufacturing.</p></div><div class="rp fi d2"><h4>Global Collaboration</h4><p>Teams aligned across time zones for real-time problem solving. We bridge cultures so your GCC feels like a natural extension.</p></div></div><div class="rq fi">"Wherever your enterprise operates, Evaaya is there."</div></div></section>
+  <!-- Process / How We Work -->
+  <section id="process" class="bg-offwhite">
+    <div class="container"><div class="section-label">How We Work</div><h2>From vision to velocity.</h2><div class="process-steps"><div class="step"><div class="step-number">1</div><h4>Discovery & Strategy</h4><p class="text-small">Objectives, location, GCC structure</p></div><div class="step"><div class="step-number">2</div><h4>Entity & Legal Setup</h4><p class="text-small">Legal formation, compliance</p></div><div class="step"><div class="step-number">3</div><h4>Talent & Space</h4><p class="text-small">Hiring, office, IT infra</p></div><div class="step"><div class="step-number">4</div><h4>Operations Launch</h4><p class="text-small">Process transfer, onboarding</p></div><div class="step"><div class="step-number">5</div><h4>Scale & Optimise</h4><p class="text-small">Performance, retention</p></div></div></div>
+  </section>
 
-<section id="contact"><div class="W"><div class="ctg"><div class="ctl fi"><div class="lbl">Contact Us</div><h2 class="ST">Let's build something<br><em>remarkable together.</em></h2><p>We've got an entire team ready to support you. Leave an inquiry and we'll reach out within 2 business days.</p><div class="ctrows"><div class="ctrow"><div class="ctrow-ico">✉️</div><span>Send us an inquiry via the form</span></div><div class="ctrow"><div class="ctrow-ico">📍</div><span>Seattle · Toronto · Bangalore</span></div><div class="ctrow"><div class="ctrow-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--teal)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><a href="https://www.linkedin.com/company/evaaya-inc/" target="_blank" rel="noopener" style="color:var(--ink2)">Follow us on LinkedIn</a></div></div></div><div class="ctf fi d1"><div class="fg2"><div class="fg"><label>Your Name *</label><input type="text" placeholder="Jane Smith"></div><div class="fg"><label>Company *</label><input type="text" placeholder="Acme Corp"></div><div class="fg"><label>Phone *</label><input type="tel" placeholder="+1 (555) 000-0000"></div><div class="fg"><label>Email *</label><input type="email" placeholder="jane@acme.com"></div></div><div class="fg"><label>Company Website</label><input type="url" placeholder="https://acme.com"></div><div class="fg"><label>Message</label><textarea rows="3" placeholder="Tell us about your GCC goals and timeline..."></textarea></div><button class="ctsub">Send Inquiry →</button><p class="ctnote">We'll respond within 2 business days.</p></div></div></div></section>
+  <!-- GCC Impact + Global Reach -->
+  <section id="reach">
+    <div class="container">
+      <div class="impact-grid" style="margin-bottom: 2rem;">
+        <div><div class="section-label">GCC Impact</div><h2>The India GCC opportunity<br>is now.</h2><p class="text-large">India hosts over 1,700 GCCs from Fortune 500 companies — the world's single largest concentration of offshore capability centres.</p></div>
+        <div class="impact-list"><div class="impact-item"><div class="impact-number">1,700+</div><p>GCCs in India today</p></div><div class="impact-item"><div class="impact-number">$110B</div><p>Projected GCC revenue by 2030</p></div><div class="impact-item"><div class="impact-number">4.5M</div><p>GCC employees expected by 2030</p></div></div>
+      </div>
 
-<footer><div class="ft"><div class="ftt"><div class="ftbrand"><div class="ftlog"><img src="https://evaaya.com/wp-content/uploads/2025/09/logo.png" alt="Evaaya" onerror="this.outerHTML='<div style=\'font-size:24px;font-weight:600;color:#fff\'>Eva<span style=\'color:#218a8a\'>aya</span></div>'"></div><p>A premium consultancy empowering global businesses with intention, innovation, and impact. Built by operators. Delivered by practitioners.</p></div><div class="ftcol"><h5>Services</h5><ul><li><a href="#svc">Enterprise Strategy</a></li><li><a href="#svc">AI & Analytics</a></li><li><a href="#svc">Talent & Innovation</a></li><li><a href="#svc">Digital Transformation</a></li></ul></div><div class="ftcol"><h5>Company</h5><ul><li><a href="#who">Who We Are</a></li><li><a href="#diff">Why Evaaya</a></li><li><a href="#reach">Global Reach</a></li><li><a href="#contact">Contact</a></li></ul></div></div><div class="ftb"><p>Evaaya Inc. 2025 © · All rights reserved.</p><div class="ftsoc"><a href="https://www.linkedin.com/company/evaaya-inc/" target="_blank" class="soc"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div></div></div></footer>
+      <!-- Global Reach Map Section -->
+      <div class="reach-section">
+        <div class="section-label" style="margin-left: 1.5rem; margin-top: 1.5rem;">Our Global Reach</div>
+        <div class="map-container">
+          <img class="map-image" src="https://evaaya.com/wp-content/uploads/2025/09/evaaya-map.webp" alt="Evaaya Global Map" onerror="this.src='https://placehold.co/1200x400/eef4f4/0f3b3b?text=Global+Reach+Map'">
+          <div class="map-pin" style="left: 15%; top: 38%;"><div class="pin-dot"></div><div class="pin-label">Seattle, USA</div></div>
+          <div class="map-pin" style="left: 23%; top: 33%;"><div class="pin-dot"></div><div class="pin-label">Toronto, Canada</div></div>
+          <div class="map-pin" style="left: 70%; top: 55%;"><div class="pin-dot"></div><div class="pin-label">Bangalore, India</div></div>
+        </div>
+        
+        <!-- Enhanced Office Cards - More Appealing Design -->
+        <div class="map-offices">
+          <div class="office-card">
+            <div class="office-flag">🇺🇸</div>
+            <h4>Seattle</h4>
+            <p>North American Headquarters</p>
+            <span class="office-location">Pacific Northwest</span>
+          </div>
+          <div class="office-card">
+            <div class="office-flag">🇨🇦</div>
+            <h4>Toronto</h4>
+            <p>Canadian Hub</p>
+            <span class="office-location">Eastern Canada</span>
+          </div>
+          <div class="office-card">
+            <div class="office-flag">🇮🇳</div>
+            <h4>Bangalore</h4>
+            <p>Global Operations Center</p>
+            <span class="office-location">Silicon Valley of India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section id="industries" class="bg-offwhite">
+    <div class="container"><div class="section-label">Industries</div><h2>Built for depth across every sector.</h2><div class="industries-grid"><div class="industry-card"><div class="industry-icon">💳</div><h4>Banking & Finance</h4></div><div class="industry-card"><div class="industry-icon">💻</div><h4>Technology & SaaS</h4></div><div class="industry-card"><div class="industry-icon">🏥</div><h4>Healthcare & Life Sciences</h4></div><div class="industry-card"><div class="industry-icon">🚗</div><h4>Automotive & Manufacturing</h4></div><div class="industry-card"><div class="industry-icon">🛍️</div><h4>Retail & E‑commerce</h4></div><div class="industry-card"><div class="industry-icon">✈️</div><h4>Travel & Hospitality</h4></div><div class="industry-card"><div class="industry-icon">⚡</div><h4>Energy & Utilities</h4></div><div class="industry-card"><div class="industry-icon">📦</div><h4>Logistics & Supply Chain</h4></div></div></div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container"><div class="section-label">Client Voices</div><h2>Trusted by leaders who demand the best.</h2><div class="testimonials-grid"><div class="testimonial-card"><p class="testimonial-text">“Evaaya got us from board approval to 80 engineers in Bengaluru under four months. Unmatched speed.”</p><div><strong>COO</strong><br><span class="text-small text-muted">Global SaaS company</span></div></div><div class="testimonial-card"><p class="testimonial-text">“What sets Evaaya apart is they've done it themselves. They solve, not just advise.”</p><div><strong>Head of Global Operations</strong><br><span class="text-small text-muted">UK Fintech</span></div></div><div class="testimonial-card"><p class="testimonial-text">“We struggled for two years. Evaaya solved in 90 days. The real deal.”</p><div><strong>CEO</strong><br><span class="text-small text-muted">European Manufacturing</span></div></div></div></div>
+  </section>
+
+  <!-- CTA + Contact -->
+  <div class="container" id="contact"><div class="cta-section"><h2>Ready to build your capability centre in India?</h2><p>Let's start with a 30-minute conversation. No sales pitch — just strategy.</p><a href="mailto:hello@evaaya.com" class="btn-cta">Book a Strategy Call</a><div style="margin-top: 1.5rem;"><a href="https://www.linkedin.com/company/evaaya-inc/" target="_blank" style="color:white; text-decoration:underline;">Follow us on LinkedIn →</a></div></div></div>
+</main>
+
+<footer><div class="container"><div class="footer-grid"><div><a href="#" class="logo" style="font-size:1.5rem;">Eva<span>aya</span></a><p class="text-small" style="margin-top:0.5rem;">India's premier Global Capability Center partner.</p><div class="social-links"><a href="https://www.linkedin.com/company/evaaya-inc/" class="social-link" target="_blank">LinkedIn</a></div></div><div><h4>Services</h4><ul class="footer-links"><li><a href="#">GCC Strategy</a></li><li><a href="#">Entity Setup</a></li><li><a href="#">Talent & HR</a></li></ul></div><div><h4>Company</h4><ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="#">Case Studies</a></li><li><a href="#contact">Contact</a></li></ul></div><div><h4>Connect</h4><ul class="footer-links"><li><a href="mailto:hello@evaaya.com">hello@evaaya.com</a></li><li><a href="#">Bengaluru, India</a></li><li><a href="https://www.linkedin.com/company/evaaya-inc/" target="_blank">LinkedIn</a></li></ul></div></div><div style="border-top:1px solid var(--border-light); margin-top:2rem; padding-top:1.5rem; text-align:center; font-size:0.75rem; color:var(--text-muted);">© 2025 Evaaya. All rights reserved.</div></div></footer>
 
 <script>
-const html=document.documentElement,tog=document.getElementById('tog'),saved=localStorage.getItem('ev-theme')||'light';
-html.setAttribute('data-theme',saved);tog.textContent=saved==='dark'?'☀️':'🌙';
-tog.addEventListener('click',()=>{const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);tog.textContent=t==='dark'?'☀️':'🌙';localStorage.setItem('ev-theme',t);});
-const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>56));
-const burger=document.getElementById('burger'),drawer=document.getElementById('mdrawer');
-function closeDr(){burger.classList.remove('open');drawer.classList.remove('open');}
-burger.addEventListener('click',()=>{burger.classList.toggle('open');drawer.classList.toggle('open');});
-document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!drawer.contains(e.target))closeDr();});
-const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}}),{threshold:.08});
-document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('ev-theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  themeToggle.textContent = savedTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+  themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const newTheme = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('ev-theme', newTheme);
+  });
+
+  // Mobile drawer
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('open'));
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === "#") return;
+      const target = document.querySelector(href);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); mobileDrawer.classList.remove('open'); }
+    });
+  });
+
+  // Hero slideshow transition (video-like effect)
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length > 0) {
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 4000);
+  }
 </script>
 </body>
 </html>
