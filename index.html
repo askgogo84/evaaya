@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -8,31 +8,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ---------- DESIGN SYSTEM (preserved) ---------- */
+/* ---------- DESIGN SYSTEM (LIGHT DEFAULT) ---------- */
 :root {
   --teal: #1a6b6b;
   --teal-hi: #218a8a;
-  --teal-p: rgba(26,107,107,.12);
-  --teal-b: rgba(26,107,107,.28);
+  --teal-p: rgba(26,107,107,.1);
+  --teal-b: rgba(26,107,107,.25);
   --gold: #c5973a;
   --gold-hi: #dba94c;
-  --gold-p: rgba(197,151,58,.12);
-}
-[data-theme="dark"] {
-  --bg: #0b1017; --bg2: #111822; --bg3: #16202c; --bgc: #1b2635;
-  --ink: #edf2f9; --ink2: #b4c4dc; --ink3: #7c8ea8;
-  --bdr: rgba(255,255,255,.07); --bdr2: rgba(255,255,255,.03);
-  --navbg: rgba(11,16,23,.94); --sh: 0 4px 24px rgba(0,0,0,.45);
-  --sh2: 0 18px 48px rgba(0,0,0,.65); --imgf: brightness(.82) contrast(1.08) saturate(.88);
-  --card-hover: rgba(26,107,107,.08);
 }
 [data-theme="light"] {
-  --bg: #fefefc; --bg2: #f7f9fc; --bg3: #f0f3f9; --bgc: #ffffff;
-  --ink: #111827; --ink2: #4b556c; --ink3: #6b7280;
-  --bdr: rgba(0,0,0,.08); --bdr2: rgba(0,0,0,.04);
-  --navbg: rgba(255,255,255,.96); --sh: 0 2px 20px rgba(0,0,0,.06);
-  --sh2: 0 20px 40px rgba(0,0,0,.1); --imgf: none;
+  --bg: #fefefc;
+  --bg2: #f7f9fc;
+  --bg3: #f0f3f9;
+  --bgc: #ffffff;
+  --ink: #111827;
+  --ink2: #4b556c;
+  --ink3: #6b7280;
+  --bdr: rgba(0,0,0,.08);
+  --bdr2: rgba(0,0,0,.04);
+  --navbg: rgba(255,255,255,.96);
+  --sh: 0 2px 20px rgba(0,0,0,.06);
+  --sh2: 0 20px 40px rgba(0,0,0,.1);
+  --imgf: none;
   --card-hover: rgba(26,107,107,.04);
+  --hero-overlay: linear-gradient(108deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.85) 45%, rgba(255,255,255,.6) 70%, rgba(255,255,255,.2) 100%);
+  --hero-text: #111827;
+  --hero-text-light: #4b556c;
+}
+[data-theme="dark"] {
+  --bg: #0b1017;
+  --bg2: #111822;
+  --bg3: #16202c;
+  --bgc: #1b2635;
+  --ink: #edf2f9;
+  --ink2: #b4c4dc;
+  --ink3: #7c8ea8;
+  --bdr: rgba(255,255,255,.07);
+  --bdr2: rgba(255,255,255,.03);
+  --navbg: rgba(11,16,23,.94);
+  --sh: 0 4px 24px rgba(0,0,0,.45);
+  --sh2: 0 18px 48px rgba(0,0,0,.65);
+  --imgf: brightness(.82) contrast(1.08) saturate(.88);
+  --card-hover: rgba(26,107,107,.08);
+  --hero-overlay: linear-gradient(108deg, rgba(11,16,23,.96) 0%, rgba(11,16,23,.88) 45%, rgba(11,16,23,.7) 70%, rgba(11,16,23,.3) 100%);
+  --hero-text: #ffffff;
+  --hero-text-light: rgba(255,255,255,.75);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -42,100 +63,104 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-h
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--teal);border-radius:4px}
 
-/* Navigation — refined */
+/* Navigation */
 #nav{
   position:fixed;top:0;left:0;right:0;z-index:300;
-  height:72px;padding:0 32px;
+  height:70px;padding:0 24px;
   display:flex;align-items:center;justify-content:space-between;
   background:var(--navbg);backdrop-filter:blur(20px);
   border-bottom:1px solid transparent;
   transition:border-color .3s,box-shadow .3s;
 }
 #nav.stuck{border-bottom-color:var(--bdr);box-shadow:var(--sh)}
-.nlogo img{height:34px;width:auto;object-fit:contain}
+.nlogo img{height:32px;width:auto;object-fit:contain}
 [data-theme="dark"] .nlogo img{filter:brightness(0) invert(1)}
 .nlogo-fb{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);display:none}
 .nlogo-fb span{color:var(--teal)}
-.nlinks{display:flex;gap:36px;list-style:none}
+.nlinks{display:flex;gap:32px;list-style:none}
 .nlinks a{font-size:13px;font-weight:500;color:var(--ink3);letter-spacing:.02em;transition:color .2s;position:relative}
 .nlinks a::after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:2px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
 .nlinks a:hover{color:var(--teal)}
 .nlinks a:hover::after{transform:scaleX(1)}
-.nright{display:flex;align-items:center;gap:14px}
-.ntog{width:38px;height:38px;border-radius:50%;border:1px solid var(--bdr);background:transparent;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--ink2)}
+.nright{display:flex;align-items:center;gap:12px}
+.ntog{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--bdr);background:var(--bgc);
+  cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;color:var(--ink2);
+}
 .ntog:hover{border-color:var(--teal);transform:rotate(8deg);background:var(--teal-p)}
-.ncta{background:var(--teal);color:#fff;padding:9px 24px;border-radius:40px;font-size:13px;font-weight:600;letter-spacing:.03em;transition:all .2s}
+.ncta{
+  background:var(--teal);color:#fff;padding:8px 22px;
+  border-radius:40px;font-size:13px;font-weight:600;
+  transition:all .2s;
+}
 .ncta:hover{background:var(--teal-hi);transform:translateY(-1px);box-shadow:0 6px 18px rgba(26,107,107,.3)}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .burger span{width:24px;height:2px;background:var(--ink2);border-radius:2px;transition:all .25s}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mdrawer{display:none;position:fixed;top:72px;left:0;right:0;z-index:299;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);padding:20px 24px 24px;flex-direction:column;gap:6px;transform:translateY(-12px);opacity:0;transition:all .25s}
+.mdrawer{display:none;position:fixed;top:70px;left:0;right:0;z-index:299;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);padding:20px 24px 24px;flex-direction:column;gap:6px;transform:translateY(-12px);opacity:0;transition:all .25s}
 .mdrawer.open{transform:none;opacity:1}
 .mdrawer a{display:block;padding:12px 0;font-size:15px;font-weight:500;color:var(--ink2);border-bottom:1px solid var(--bdr2);transition:all .2s}
 .mdrawer a:hover{color:var(--teal);padding-left:8px}
 .mdrawer .mcta{background:var(--teal);color:#fff;text-align:center;padding:12px;border-radius:40px;margin-top:12px;border-bottom:none}
 
-/* HERO — STRICT 100vh, NO OVERFLOW, VERTICAL ALIGNMENT */
+/* HERO — FULL VISIBLE ON MOBILE */
 #hero{
-  height:100vh;min-height:600px;max-height:100vh;
-  position:relative;overflow:hidden;
-  display:flex;align-items:center;
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding-top:70px;
 }
 .hpar{
-  position:absolute;inset:-12% 0;
+  position:absolute;inset:0;
   background:url('https://evaaya.com/wp-content/uploads/2025/09/evaaya-home-who-we-are.jpg') center/cover no-repeat;
-  will-change:transform;
-  filter:brightness(.28) saturate(.72) contrast(1.1);
+  filter:brightness(.65) saturate(.85);
 }
-[data-theme="light"] .hpar{filter:brightness(.32) saturate(.68)}
+[data-theme="dark"] .hpar{filter:brightness(.28) saturate(.72) contrast(1.1);}
 .hgrad{
   position:absolute;inset:0;z-index:1;
-  background:linear-gradient(108deg, rgba(11,16,23,.96) 0%, rgba(11,16,23,.82) 45%, rgba(11,16,23,.5) 70%, transparent 100%);
+  background:var(--hero-overlay);
 }
-[data-theme="light"] .hgrad{background:linear-gradient(108deg, rgba(11,16,23,.92) 0%, rgba(11,16,23,.78) 45%, rgba(11,16,23,.4) 70%, rgba(11,16,23,.05) 100%);}
 .hdots{
   position:absolute;inset:0;z-index:2;pointer-events:none;
-  background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-image:radial-gradient(circle,rgba(0,0,0,.04) 1px,transparent 1px);
   background-size:48px 48px;
 }
-.haccent{
-  position:absolute;left:0;top:0;bottom:0;z-index:2;
-  width:3px;background:linear-gradient(to bottom,transparent,var(--teal) 25%,var(--gold) 75%,transparent);
-  opacity:.7;
-}
+[data-theme="dark"] .hdots{background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);}
 .hinner{
   position:relative;z-index:3;width:100%;max-width:1320px;margin:0 auto;
-  padding:0 32px;
-  /* remove extra top padding: max 80px total offset */
-  padding-top:72px; /* nav height exactly 72px, no extra */
-  display:grid;grid-template-columns:1fr 1fr;gap:40px;
-  align-items:center; /* vertical alignment left + right */
+  padding:40px 24px 60px;
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;
+  align-items:center;
 }
 .hleft{padding-right:16px}
 .hchip{
   display:inline-flex;align-items:center;gap:10px;
   font-family:'JetBrains Mono',monospace;font-size:10px;
   letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(255,255,255,.9);padding:5px 16px;
-  border:1px solid rgba(255,255,255,.18);border-radius:100px;
-  background:rgba(255,255,255,.06);backdrop-filter:blur(8px);
+  color:var(--teal-hi);padding:5px 16px;
+  border:1px solid var(--bdr);border-radius:100px;
+  background:var(--bgc);backdrop-filter:blur(8px);
   margin-bottom:20px;
 }
 .hchip::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 h1.hh{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(42px,5vw,78px);
-  font-weight:300;line-height:1.05;letter-spacing:-.01em;
-  color:#fff;margin-bottom:20px;
+  font-size:clamp(38px,6vw,78px);
+  font-weight:300;line-height:1.08;letter-spacing:-.01em;
+  color:var(--hero-text);margin-bottom:20px;
 }
 h1.hh em{font-style:italic;color:var(--gold-hi)}
 h1.hh strong{font-weight:600}
 .hsub{
-  font-size:15px;font-weight:300;color:rgba(255,255,255,.7);
-  line-height:1.7;max-width:480px;margin-bottom:32px;
+  font-size:15px;font-weight:400;color:var(--hero-text-light);
+  line-height:1.7;max-width:500px;margin-bottom:32px;
 }
 .hbtns{display:flex;gap:14px;flex-wrap:wrap}
 .hbtns .b1{
@@ -143,39 +168,43 @@ h1.hh strong{font-weight:600}
   border-radius:40px;font-size:13px;font-weight:600;
   transition:all .2s;
 }
-.hbtns .b1:hover{background:var(--teal-hi);transform:translateY(-2px);box-shadow:0 12px 28px rgba(26,107,107,.4)}
+.hbtns .b1:hover{background:var(--teal-hi);transform:translateY(-2px);box-shadow:0 12px 28px rgba(26,107,107,.3)}
 .hbtns .b2{
-  border:1.5px solid rgba(255,255,255,.3);color:#fff;
+  border:1.5px solid var(--bdr);color:var(--hero-text);
   padding:10px 24px;border-radius:40px;font-size:13px;font-weight:500;
-  background:rgba(255,255,255,.05);backdrop-filter:blur(6px);
+  background:rgba(255,255,255,.5);backdrop-filter:blur(6px);
 }
-.hbtns .b2:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.12)}
+[data-theme="dark"] .hbtns .b2{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.3);}
+.hbtns .b2:hover{border-color:var(--teal);background:var(--teal-p);}
 
-/* RIGHT COLUMN CARDS — compact, no extra height */
+/* RIGHT COLUMN CARDS — fully visible */
 .hright{
   display:flex;flex-direction:column;
-  gap:0; /* no gap, border separation */
+  gap:0;
   width:100%;
 }
 .hcard{
   padding:16px 20px;
   display:flex;align-items:center;gap:18px;
-  border-left:1px solid rgba(255,255,255,.08);
-  border-bottom:1px solid rgba(255,255,255,.05);
-  background:transparent;
+  border-left:2px solid transparent;
+  border-bottom:1px solid var(--bdr);
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(4px);
   transition:all .2s;
+  border-radius:0;
 }
+[data-theme="light"] .hcard{background:rgba(255,255,255,.6);}
 .hcard:last-child{border-bottom:none}
-.hcard:hover{background:rgba(255,255,255,.06);border-left-color:rgba(255,255,255,.2);transform:translateX(4px)}
+.hcard:hover{background:var(--teal-p);border-left-color:var(--teal);transform:translateX(4px)}
 .hcard-ico{
   width:46px;height:46px;border-radius:12px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
-  font-size:22px;background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1);
+  font-size:22px;background:rgba(255,255,255,.8);
+  border:1px solid var(--bdr);
 }
-.hcard-v{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,1.8vw,24px);font-weight:500;color:#fff;line-height:1.2}
-.hcard-lbl{font-size:11px;color:rgba(255,255,255,.55);margin-top:2px;line-height:1.3}
-.hscroll{display:none} /* remove to save space */
+[data-theme="dark"] .hcard-ico{background:rgba(255,255,255,.1);}
+.hcard-v{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,1.8vw,24px);font-weight:600;color:var(--hero-text);line-height:1.2}
+.hcard-lbl{font-size:11px;color:var(--hero-text-light);margin-top:2px;line-height:1.3}
 
 /* marquee */
 .marquee{overflow:hidden;background:var(--teal);padding:12px 0}
@@ -185,7 +214,7 @@ h1.hh strong{font-weight:600}
 
 /* sections */
 section{padding:80px 0}
-.W{max-width:1320px;margin:0 auto;padding:0 32px}
+.W{max-width:1320px;margin:0 auto;padding:0 24px}
 .lbl{
   display:inline-flex;align-items:center;gap:10px;
   font-family:'JetBrains Mono',monospace;font-size:10px;
@@ -240,7 +269,7 @@ h2.ST em{font-style:italic;color:var(--teal)}
 .sc-arr{display:inline-block;margin-top:18px;font-size:12px;font-weight:600;color:var(--teal);opacity:0;transition:opacity .2s}
 .sc:hover .sc-arr{opacity:1}
 
-/* DELIVERY SECTION — fixed alignment (image + text side by side, no extra spacing) */
+/* DELIVERY SECTION */
 #deliver{background:var(--bg)}
 .dlg{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .dliw{position:relative}
@@ -248,7 +277,6 @@ h2.ST em{font-style:italic;color:var(--teal)}
 .dliw:hover .dlimg{transform:scale(1.01)}
 .dlbdg{position:absolute;bottom:-12px;right:-16px;background:var(--gold);color:#fff;padding:16px 22px;border-radius:12px}
 .dltxt p{font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:20px}
-/* PL list — image and text properly aligned */
 .pls{border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:24px}
 .pl{
   display:flex;align-items:center;gap:16px;
@@ -301,7 +329,7 @@ h2.ST em{font-style:italic;color:var(--teal)}
 .ctsub:hover{background:var(--teal-hi);transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,107,107,.3)}
 
 /* footer */
-footer{background:#0a0f17;padding:60px 32px 36px}
+footer{background:#0a0f17;padding:60px 24px 36px}
 .ft{max-width:1320px;margin:0 auto}
 .ftt{display:grid;grid-template-columns:2fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px}
 .ftlog img{height:30px;filter:brightness(0) invert(1)}
@@ -315,44 +343,45 @@ footer{background:#0a0f17;padding:60px 32px 36px}
 .soc:hover{border-color:var(--gold);color:var(--gold);background:rgba(197,151,58,.1)}
 .soc svg{width:14px;height:14px;fill:currentColor}
 
-/* MOBILE FIRST: responsive */
+/* MOBILE FIRST: full visibility */
 @media(max-width:1000px){
   #nav{padding:0 20px}
-  .nlinks,.ntog,.ncta{display:none}
+  .nlinks,.ncta{display:none}
   .burger{display:flex}
   .mdrawer{display:flex}
-  #hero{height:auto;min-height:auto;max-height:none}
-  .hinner{grid-template-columns:1fr;padding-top:80px;gap:28px}
+  #hero{min-height:auto;padding-top:70px;}
+  .hinner{grid-template-columns:1fr;padding:20px 20px 50px;gap:32px}
   .hleft{padding-right:0}
-  .hright{flex-direction:row;overflow-x:auto;gap:12px;padding-bottom:12px;margin-bottom:8px}
-  .hcard{min-width:190px;border-left:none;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);flex-shrink:0;padding:14px 16px}
+  .hright{flex-direction:row;overflow-x:auto;gap:12px;padding-bottom:12px;margin-bottom:0;scrollbar-width:thin}
+  .hcard{min-width:190px;border-left:none;border-radius:14px;background:var(--bgc);border:1px solid var(--bdr);flex-shrink:0;padding:14px 16px;backdrop-filter:none;}
   .hcard:hover{transform:translateX(0)}
-  .haccent{display:none}
+  .hcard-ico{width:42px;height:42px;font-size:20px}
   .wg,.dlg,.ctg,.dh,.sh,.rh{grid-template-columns:1fr;gap:40px}
   .dg,.sg{grid-template-columns:1fr}
   .og,.rpg{grid-template-columns:1fr;gap:20px}
   .ftt{grid-template-columns:1fr 1fr;gap:36px}
-  section{padding:64px 0}
+  section{padding:60px 0}
   .W{padding:0 20px}
   .wiw::before,.wiw::after,.wbdg,.dlbdg{display:none}
   .mimg{height:180px}
   .pls{margin-top:16px}
   .pl{padding:12px 16px}
+  .hchip{font-size:9px;padding:4px 12px}
+  h1.hh{font-size:36px}
 }
 @media(max-width:550px){
   .hcard{min-width:170px}
   .fg2{grid-template-columns:1fr}
   .ctf{padding:24px 20px}
-  .hbtns .b1,.hbtns .b2{padding:8px 20px}
-  h1.hh{font-size:36px}
+  .hbtns .b1,.hbtns .b2{padding:8px 20px;font-size:12px}
 }
 </style>
 </head>
 <body>
-<nav id="nav"><a href="#" class="nlogo"><img src="https://evaaya.com/wp-content/uploads/2025/09/logo.png" alt="Evaaya" onerror="this.style.display='none';document.querySelector('.nlogo-fb').style.display='block'"><span class="nlogo-fb">Eva<span>aya</span></span></a><ul class="nlinks"><li><a href="#who">Who We Are</a></li><li><a href="#diff">Why Evaaya</a></li><li><a href="#svc">Services</a></li><li><a href="#deliver">Delivery</a></li><li><a href="#reach">Global Reach</a></li></ul><div class="nright"><button class="ntog" id="tog">☀️</button><a href="#contact" class="ncta">Work With Us</a><button class="burger" id="burger"><span></span><span></span><span></span></button></div></nav>
+<nav id="nav"><a href="#" class="nlogo"><img src="https://evaaya.com/wp-content/uploads/2025/09/logo.png" alt="Evaaya" onerror="this.style.display='none';document.querySelector('.nlogo-fb').style.display='block'"><span class="nlogo-fb">Eva<span>aya</span></span></a><ul class="nlinks"><li><a href="#who">Who We Are</a></li><li><a href="#diff">Why Evaaya</a></li><li><a href="#svc">Services</a></li><li><a href="#deliver">Delivery</a></li><li><a href="#reach">Global Reach</a></li></ul><div class="nright"><button class="ntog" id="tog" aria-label="Toggle theme">🌙</button><a href="#contact" class="ncta">Work With Us</a><button class="burger" id="burger"><span></span><span></span><span></span></button></div></nav>
 <div class="mdrawer" id="mdrawer"><a href="#who">Who We Are</a><a href="#diff">Why Evaaya</a><a href="#svc">Services</a><a href="#deliver">Delivery</a><a href="#reach">Global Reach</a><a href="#contact" class="mcta">Work With Us</a></div>
 
-<section id="hero"><div class="hpar" id="par"></div><div class="hgrad"></div><div class="hdots"></div><div class="haccent"></div><div class="hinner"><div class="hleft"><div class="hchip">Premium GCC Consultancy · Built by Leaders</div><h1 class="hh">Empowering global<br>businesses with<br><em>intention, innovation,</em><br><strong>and impact.</strong></h1><p class="hsub">Transform quickly, scale efficiently and thrive with AI. Evaaya is built by leaders who have scaled billion-dollar enterprises.</p><div class="hbtns"><a href="#contact" class="b1">Work With Us</a><a href="#who" class="b2">Discover Evaaya →</a></div></div><div class="hright"><div class="hcard"><div class="hcard-ico">🏢</div><div><div class="hcard-v">Fortune 500</div><div class="hcard-lbl">GCCs for the world's most ambitious enterprises</div></div></div><div class="hcard"><div class="hcard-ico">🌏</div><div><div class="hcard-v">3 Continents</div><div class="hcard-lbl">Seattle · Toronto · Bangalore</div></div></div><div class="hcard"><div class="hcard-ico">⚡</div><div><div class="hcard-v">End-to-End</div><div class="hcard-lbl">Strategy, setup, talent, tech & operations</div></div></div><div class="hcard"><div class="hcard-ico">🤖</div><div><div class="hcard-v">AI-First</div><div class="hcard-lbl">Embedding AI at the core of every GCC</div></div></div><div class="hcard"><div class="hcard-ico">🧠</div><div><div class="hcard-v">Practitioner</div><div class="hcard-lbl">Operators who've done it — not just advisors</div></div></div></div></div></section>
+<section id="hero"><div class="hpar"></div><div class="hgrad"></div><div class="hdots"></div><div class="hinner"><div class="hleft"><div class="hchip">Premium GCC Consultancy · Built by Leaders</div><h1 class="hh">Empowering global<br>businesses with<br><em>intention, innovation,</em><br><strong>and impact.</strong></h1><p class="hsub">Transform quickly, scale efficiently and thrive with AI. Evaaya is built by leaders who have scaled billion-dollar enterprises.</p><div class="hbtns"><a href="#contact" class="b1">Work With Us</a><a href="#who" class="b2">Discover Evaaya →</a></div></div><div class="hright"><div class="hcard"><div class="hcard-ico">🏢</div><div><div class="hcard-v">Fortune 500</div><div class="hcard-lbl">GCCs for the world's most ambitious enterprises</div></div></div><div class="hcard"><div class="hcard-ico">🌏</div><div><div class="hcard-v">3 Continents</div><div class="hcard-lbl">Seattle · Toronto · Bangalore</div></div></div><div class="hcard"><div class="hcard-ico">⚡</div><div><div class="hcard-v">End-to-End</div><div class="hcard-lbl">Strategy, setup, talent, tech & operations</div></div></div><div class="hcard"><div class="hcard-ico">🤖</div><div><div class="hcard-v">AI-First</div><div class="hcard-lbl">Embedding AI at the core of every GCC</div></div></div><div class="hcard"><div class="hcard-ico">🧠</div><div><div class="hcard-v">Practitioner</div><div class="hcard-lbl">Operators who've done it — not just advisors</div></div></div></div></div></section>
 
 <div class="marquee"><div class="marquee-track"><span>GCC Strategy</span><span>·</span><span>Enterprise Capability Building</span><span>·</span><span>AI & Analytics</span><span>·</span><span>Talent & Innovation Leadership</span><span>·</span><span>Digital Transformation</span><span>·</span><span>Future-Ready GCCs</span><span>·</span><span>IP Protection</span><span>·</span><span>Fortune 500 Expertise</span><span>·</span><span>Insight Before Action</span><span>·</span><span>GCC Strategy</span><span>·</span><span>Enterprise Capability Building</span><span>·</span><span>AI & Analytics</span><span>·</span><span>Talent & Innovation Leadership</span><span>·</span><span>Digital Transformation</span><span>·</span><span>Future-Ready GCCs</span><span>·</span><span>IP Protection</span><span>·</span><span>Fortune 500 Expertise</span><span>·</span><span>Insight Before Action</span><span>·</span></div></div>
 
@@ -371,7 +400,7 @@ footer{background:#0a0f17;padding:60px 32px 36px}
 <footer><div class="ft"><div class="ftt"><div class="ftbrand"><div class="ftlog"><img src="https://evaaya.com/wp-content/uploads/2025/09/logo.png" alt="Evaaya" onerror="this.outerHTML='<div style=\'font-size:24px;font-weight:600;color:#fff\'>Eva<span style=\'color:#218a8a\'>aya</span></div>'"></div><p>A premium consultancy empowering global businesses with intention, innovation, and impact. Built by operators. Delivered by practitioners.</p></div><div class="ftcol"><h5>Services</h5><ul><li><a href="#svc">Enterprise Strategy</a></li><li><a href="#svc">AI & Analytics</a></li><li><a href="#svc">Talent & Innovation</a></li><li><a href="#svc">Digital Transformation</a></li></ul></div><div class="ftcol"><h5>Company</h5><ul><li><a href="#who">Who We Are</a></li><li><a href="#diff">Why Evaaya</a></li><li><a href="#reach">Global Reach</a></li><li><a href="#contact">Contact</a></li></ul></div></div><div class="ftb"><p>Evaaya Inc. 2025 © · All rights reserved.</p><div class="ftsoc"><a href="https://www.linkedin.com/company/evaaya-inc/" target="_blank" class="soc"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div></div></div></footer>
 
 <script>
-const html=document.documentElement,tog=document.getElementById('tog'),saved=localStorage.getItem('ev-theme')||'dark';
+const html=document.documentElement,tog=document.getElementById('tog'),saved=localStorage.getItem('ev-theme')||'light';
 html.setAttribute('data-theme',saved);tog.textContent=saved==='dark'?'☀️':'🌙';
 tog.addEventListener('click',()=>{const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);tog.textContent=t==='dark'?'☀️':'🌙';localStorage.setItem('ev-theme',t);});
 const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>56));
@@ -379,8 +408,6 @@ const burger=document.getElementById('burger'),drawer=document.getElementById('m
 function closeDr(){burger.classList.remove('open');drawer.classList.remove('open');}
 burger.addEventListener('click',()=>{burger.classList.toggle('open');drawer.classList.toggle('open');});
 document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!drawer.contains(e.target))closeDr();});
-const par=document.getElementById('par');let tick=false;
-window.addEventListener('scroll',()=>{if(!tick){requestAnimationFrame(()=>{par.style.transform=`translateY(${scrollY*0.3}px)`;tick=false;});tick=true;}},{passive:true});
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}}),{threshold:.08});
 document.querySelectorAll('.fi').forEach(el=>io.observe(el));
 </script>
