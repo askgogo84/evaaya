@@ -173,7 +173,7 @@ nav.scrolled .btn-nav {
 }
 .hero-content {
   position: relative; z-index: 10;
-  padding: 0 3rem 5rem;
+  padding: 9rem 3rem 5rem;
   max-width: 1320px; margin: 0 auto; width: 100%;
 }
 .hero-eyebrow {
@@ -755,7 +755,8 @@ footer {
   h1 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
   h2 { font-size: clamp(1.9rem, 6.5vw, 2.75rem); }
   /* Hero */
-  .hero-content { padding: 0 1.25rem 9rem; }
+  .hero-content { padding: 7rem 1.25rem 9rem; }
+  .hero-eyebrow { display: none; } /* prevents overlap with fixed nav on mobile */
   .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
   .hero-stat { padding: 1rem 0.75rem; }
   .hero-stat:first-child { padding-left: 0.75rem; }
